@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Un mes más juntos ❤️</title>
+  <style>
+    :root{
+      --bg:#0b0f14; --panel:#0f1621; --text:#d7e2f0; --muted:#8aa0b8;
+      --accent:#62d6ff; --good:#36d399; --warn:#fbbf24;
+      --border:rgba(255,255,255,.10);
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      --sans: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 800px at 20% 0%, rgba(98,214,255,.15), transparent 60%),
+                  radial-gradient(900px 700px at 100% 10%, rgba(167,139,250,.12), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      font-family:var(--sans);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+    .wrap{width:min(980px, 100%);}
+    .top{
+      display:flex; gap:12px; align-items:center; justify-content:space-between; margin-bottom:14px;
+      flex-wrap:wrap;
+    }
+    .badge{
+      font-family:var(--mono); font-size:12px; letter-spacing:.4px; color:var(--muted);
+      border:1px solid var(--border); padding:8px 10px; border-radius:999px; background:rgba(255,255,255,.03);
+    }
+    .card{
+      border:1px solid var(--border); border-radius:18px; overflow:hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+    }
+    .titlebar{
+      display:flex; align-items:center; gap:10px; padding:12px 14px; background:rgba(255,255,255,.04);
+      border-bottom:1px solid var(--border);
+      font-family:var(--mono);
+    }
+    .dots{display:flex; gap:7px}
+    .dot{width:10px; height:10px; border-radius:50%}
+    .dot.r{background:#ff5f57} .dot.y{background:#febc2e} .dot.g{background:#28c840}
+    .path{color:var(--muted)}
+    .content{padding:18px}
+    .grid{display:grid; grid-template-columns: 1.15fr .85fr; gap:18px}
+    @media (max-width: 860px){ .grid{grid-template-columns:1fr} }
+    .terminal{
+      background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:16px;
+      font-family:var(--mono); line-height:1.55;
+    }
+    .prompt{color:var(--muted)}
+    .cmd{color:var(--accent)}
+    .ok{color:var(--good)}
+    .warn{color:var(--warn)}
+    .hr{height:1px; background:var(--border); margin:14px 0}
+    .photo{
+      border:1px solid var(--border); border-radius:16px; overflow:hidden; background:rgba(255,255,255,.02);
+      display:flex; flex-direction:column;
+    }
+    .photo img{width:100%; height:320px; object-fit:cover; display:block}
+    .photo .cap{padding:12px 12px 14px; color:var(--muted); font-family:var(--mono); font-size:12px}
+    .btnrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    a.btn, button.btn{
+      text-decoration:none; color:var(--text); font-family:var(--mono); font-size:13px;
+      border:1px solid var(--border); padding:10px 12px; border-radius:12px;
+      background:rgba(255,255,255,.03);
+      transition:.15s transform, .15s background;
+      display:inline-flex; align-items:center; gap:8px;
+      cursor:pointer;
+    }
+    a.btn:hover, button.btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.06)}
+    .tiny{font-size:12px; color:var(--muted)}
+    .sig{color:var(--muted); font-family:var(--mono); font-size:12px; margin-top:12px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div class="badge">LOVEOS v1.0 • build: “un mes más juntos”</div>
+      <div class="badge">Estado: <span class="ok">estable</span> • Amor: <span class="warn">∞</span></div>
+    </div>
+
+    <div class="card">
+      <div class="titlebar">
+        <div class="dots">
+          <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+        </div>
+        <div class="path">~/relación/</div>
+        <div style="margin-left:auto" class="path">carta.html</div>
+      </div>
+
+      <div class="content">
+        <div class="grid">
+          <div class="terminal">
+            <div><span class="prompt">Para el novio más lindo</span>:<span class="cmd">~</span>$ iniciar mi lado cursi --modo=romántico</div>
+            <div class="tiny">Cargando… (sin bugs, con mariposas)</div>
+
+            <div class="hr"></div>
+
+            <div><span class="prompt">[timeline]</span></div>
+            <div>• Nos conocimos: <span class="ok">10 nov 2024</span></div>
+            <div>• Nos hicimos novios: <span class="ok">10 abr 2025</span></div>
+            <div>• Hoy: <span class="warn">un mes más juntos</span> (y contando)</div>
+
+            <div class="hr"></div>
+
+            <div><span class="prompt">[contador]</span></div>
+            <div>• Días desde que nos conocimos: <span class="ok" id="diasConocer">?</span></div>
+            <div>• Días desde que somos novios: <span class="ok" id="diasNovios">?</span></div>
+
+            <div class="hr"></div>
+
+            <div><span class="prompt">[carta]</span></div>
+            <div style="white-space:pre-wrap; margin-top:6px">
+Guapito,
+
+Un mes más juntos y todavía me sorprende lo bien que haces que todo se sienta en su lugar.
+Gracias por ser un gran compañero de vida y novio, gracias por hacerme sentir tan bien y tenerte en mi vida; y que yo sea parte de la tuya es de los regalos más lindos que he recibido.
+Gracias por elegirme todos los días.
+Te amo.
+
+— Dayra
+            </div>
+
+            <div class="btnrow">
+              <a class="btn" target="_blank" rel="noreferrer"
+                 href="https://open.spotify.com/intl-es/track/2cLOSF54zDP52z6ma8mivK?si=35aa98fbe59b49c3">
+                ▶ Nuestra canción <span class="tiny">“Lo que en ti veo” — Kany García</span>
+              </a>
+
+              <button class="btn" id="copiar">⎘ Copiar link</button>
+            </div>
+
+            <div class="sig">Tip: Ctrl + P para guardarlo como PDF bonito.</div>
+          </div>
+
+          <div class="photo">
+            <img src="foto.jpeg" alt="Nuestra foto"
+                 onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1200&q=80';
+                          this.nextElementSibling.textContent='No encontró foto.jpg. Asegúrate de que esté en la misma carpeta que index.html y que se llame EXACTO foto.jpg';">
+            <div class="cap">Eres mi recuerdo más lindo</b>.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const spotify = "https://open.spotify.com/intl-es/track/2cLOSF54zDP52z6ma8mivK?si=35aa98fbe59b49c3";
+    const conocer = new Date("2024-11-10T00:00:00");
+    const novios  = new Date("2025-04-10T00:00:00");
+
+    function diasEntre(a,b){
+      const ms = b - a;
+      return Math.floor(ms / (1000*60*60*24));
+    }
+
+    const hoy = new Date();
+    document.getElementById("diasConocer").textContent = diasEntre(conocer, hoy);
+    document.getElementById("diasNovios").textContent  = diasEntre(novios, hoy);
+
+    document.getElementById("copiar").addEventListener("click", async () => {
+      try { await navigator.clipboard.writeText(spotify); alert("Link copiado 💚"); }
+      catch { prompt("Copia el link:", spotify); }
+    });
+  </script>
+</body>
+</html>
